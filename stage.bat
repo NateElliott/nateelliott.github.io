@@ -1,12 +1,7 @@
 @echo off
-
 set /p message="commit message: "
-set /p repo="repo(master): "
-if "%repo%" == "" set repo=master
-echo Working.
+echo %message% > index.html
 git add --all
-git commit -m %message%
-git push -u origin %repo%
-
-
+git commit -m "%message%"
+git push -u origin master
 echo Done!
